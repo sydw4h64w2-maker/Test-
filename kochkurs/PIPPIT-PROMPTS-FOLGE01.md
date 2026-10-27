@@ -42,3 +42,14 @@ Die Endkarte („Mias Küche – Morgen: Pizza-Schnecken") und alle Rezept-Einbl
 - Pro Clip 2–3 Varianten erzeugen, die ähnlichste nehmen.
 - Wasserzeichen oder Pippit-Schrift im Bild? Bitte trotzdem hochladen, ich sage dir, ob es stört.
 - Dateien benennen: `01-ansage.mp4`, `02-zutaten.mp4` … und hier hochladen.
+
+---
+
+## NEU: Version mit 4 Clips à 15 Sekunden (ersetzt die 9 kurzen Clips)
+
+Startbild für jeden Clip: `assets/referenz/mia-referenz.jpg` (Bild 3). Format 16:9, 15 s. Baustein immer anhängen.
+
+1. **Ansage + Zutaten:** Mia smiles into the camera and happily says in German: "Hallo! Heute machen wir Pfannkuchen!" Then she places the ingredients on the oak counter one by one and points at each: flour in a plain brown paper bag, milk in a plain glass bottle, two brown eggs, a small white salt shaker, a small bowl of sugar, a block of butter on parchment, and a white mixing bowl. Medium shot, eye level, the camera slowly pushes in a little.
+2. **Teig:** Close-up at the counter: Mia pours flour from a measuring cup into the white mixing bowl, adds a spoon of sugar and a pinch of salt, cracks two eggs into it while an adult hand steadies the bowl, pours in milk and whisks with a metal whisk until the batter is smooth and pale yellow. At the end she has a little flour on her nose and laughs.
+3. **Braten + Wenden:** At the white stove: an adult (only visible from the shoulders down, blue shirt) melts butter in a black frying pan and pours one ladle of batter. Mia watches from a step stool at a safe distance with excited eyes. The adult flips the pancake with a spatula, golden-brown side up, Mia claps and cheers.
+4. **Probieren:** Mia at the counter in front of a stack of golden pancakes on a white plate. She takes a bite with a fork, closes her eyes, smiles and says in German: "Mmmh! Lecker!" Then she waves into the camera and says: "Bis morgen!"
