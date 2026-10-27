@@ -1,0 +1,189 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "Nunito", sans-serif; color: #3A2418; }
+    .wall { position: absolute; inset: 0; background-color: #BFE3D0;
+      background-image: linear-gradient(#F4FBF7 4px, transparent 4px), linear-gradient(90deg, #F4FBF7 4px, transparent 4px);
+      background-size: 120px 120px; background-position: -2px -2px; }
+    .ctop { position: absolute; left: 0; right: 0; top: 780px; height: 66px; background: #E7A973;
+      border-top: 6px solid #3A2418; border-bottom: 6px solid #3A2418; }
+    .cfront { position: absolute; left: 0; right: 0; top: 846px; bottom: 0; background-color: #C98450;
+      background-image: repeating-linear-gradient(0deg, transparent 0 38px, rgba(140, 82, 40, 0.35) 38px 41px); }
+    .wood { position: absolute; inset: 0; background: #D9965F; }
+    .title { position: absolute; font-weight: 900; letter-spacing: -0.01em; line-height: 1; }
+    .w { display: inline-block; }
+
+    #r-cam { position: absolute; inset: 0; }
+    #r-over { position: absolute; inset: 0; }
+    #r-bowl { position: absolute; left: 680px; top: 260px; width: 560px; height: 560px; overflow: visible; }
+    #r-whisk { position: absolute; left: 680px; top: 260px; width: 560px; height: 560px; overflow: visible; }
+    .r-step { position: absolute; left: 110px; top: 96px; font-size: 76px; }
+    #r-step3 { left: 1250px; top: 96px; }
+    #r-pour1 { position: absolute; left: 930px; top: -40px; width: 60px; height: 600px; background: #FFFFFF; border: 5px solid #3A2418; border-top: 0; border-radius: 0 0 30px 30px; transform-origin: 50% 0; }
+    #r-pour2 { position: absolute; left: 1060px; top: -40px; width: 46px; height: 560px; background: #F7FBFF; border: 5px solid #3A2418; border-top: 0; border-radius: 0 0 24px 24px; transform-origin: 50% 0; }
+    #r-puffs { position: absolute; inset: 0; }
+    #r-close { position: absolute; inset: 0; opacity: 0; }
+    #r-batter, #r-lumps, #r-egg1, #r-egg2, #r-sugar, .r-puff { opacity: 0; }
+    #r-mia { position: absolute; left: 260px; top: -60px; width: 1400px; height: 1960px; }
+
+  </style>
+  <div id="root" data-composition-id="ruehren" data-width="1920" data-height="1080">
+    <div id="r-cam">
+      <div id="r-over">
+        <div class="wood"></div>
+        <svg class="grain" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;inset:0"><path d="M-20 16 Q115 21 250 16 Q398 7 546 16 Q644 6 742 16 Q840 23 938 16 Q1029 17 1119 16 Q1216 10 1314 16 Q1428 26 1543 16 Q1671 3 1800 16 Q1902 6 2004 16" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 67 Q120 80 259 67 Q403 60 546 67 Q694 67 842 67 Q983 69 1123 67 Q1237 63 1352 67 Q1466 62 1580 67 Q1670 76 1759 67 Q1903 81 2047 67" fill="none" stroke="#C07F4A" stroke-width="4" opacity="0.45"/><path d="M-20 105 Q120 95 260 105 Q394 103 528 105 Q622 97 716 105 Q838 98 960 105 Q1077 108 1193 105 Q1305 95 1417 105 Q1536 97 1655 105 Q1754 96 1853 105 Q1962 93 2072 105" fill="none" stroke="#C07F4A" stroke-width="4" opacity="0.45"/><path d="M-20 144 Q118 156 255 144 Q338 134 422 144 Q566 154 711 144 Q842 135 973 144 Q1086 155 1199 144 Q1350 153 1501 144 Q1597 154 1694 144 Q1804 150 1914 144 Q2005 157 2095 144" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 192 Q77 195 174 192 Q300 194 427 192 Q536 198 644 192 Q752 186 859 192 Q952 197 1045 192 Q1134 184 1223 192 Q1309 196 1394 192 Q1519 193 1643 192 Q1726 190 1809 192 Q1917 180 2024 192" fill="none" stroke="#C07F4A" stroke-width="2" opacity="0.45"/><path d="M-20 224 Q85 221 190 224 Q342 226 495 224 Q631 236 767 224 Q888 234 1010 224 Q1093 219 1176 224 Q1268 226 1361 224 Q1483 233 1606 224 Q1704 216 1802 224 Q1946 221 2089 224" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 276 Q81 281 181 276 Q329 269 477 276 Q604 272 731 276 Q831 270 930 276 Q1027 272 1123 276 Q1206 273 1289 276 Q1376 283 1463 276 Q1591 262 1719 276 Q1861 267 2003 276" fill="none" stroke="#C07F4A" stroke-width="4" opacity="0.45"/><path d="M-20 322 Q91 310 202 322 Q325 335 447 322 Q539 309 631 322 Q740 312 850 322 Q954 325 1059 322 Q1162 318 1265 322 Q1353 322 1441 322 Q1568 324 1695 322 Q1810 318 1924 322 Q2028 335 2132 322" fill="none" stroke="#C07F4A" stroke-width="2" opacity="0.45"/><path d="M-20 353 Q131 354 283 353 Q373 339 463 353 Q563 363 663 353 Q755 353 847 353 Q956 349 1066 353 Q1210 345 1354 353 Q1492 358 1629 353 Q1784 354 1939 353 Q2093 351 2246 353" fill="none" stroke="#C07F4A" stroke-width="4" opacity="0.45"/><path d="M-20 400 Q127 411 274 400 Q364 390 453 400 Q576 409 698 400 Q821 394 944 400 Q1101 394 1257 400 Q1344 387 1431 400 Q1514 406 1596 400 Q1685 406 1773 400 Q1923 414 2072 400" fill="none" stroke="#C07F4A" stroke-width="4" opacity="0.45"/><path d="M-20 435 Q138 439 297 435 Q433 446 569 435 Q652 423 735 435 Q848 431 960 435 Q1071 425 1183 435 Q1275 429 1367 435 Q1489 435 1611 435 Q1713 427 1815 435 Q1974 447 2134 435" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 481 Q139 488 299 481 Q418 474 536 481 Q653 492 770 481 Q893 472 1016 481 Q1126 480 1236 481 Q1331 483 1427 481 Q1509 490 1592 481 Q1686 470 1781 481 Q1908 475 2035 481" fill="none" stroke="#C07F4A" stroke-width="4" opacity="0.45"/><path d="M-20 525 Q118 513 256 525 Q392 537 529 525 Q664 512 799 525 Q922 533 1044 525 Q1179 519 1313 525 Q1443 529 1573 525 Q1711 523 1850 525 Q1990 517 2130 525" fill="none" stroke="#C07F4A" stroke-width="2" opacity="0.45"/><path d="M-20 568 Q79 569 179 568 Q260 566 341 568 Q481 563 622 568 Q720 555 817 568 Q953 566 1089 568 Q1243 574 1396 568 Q1484 579 1572 568 Q1726 577 1881 568 Q2027 573 2174 568" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 611 Q107 604 235 611 Q325 617 416 611 Q544 598 671 611 Q803 614 934 611 Q1055 618 1176 611 Q1326 607 1476 611 Q1621 611 1766 611 Q1892 608 2018 611" fill="none" stroke="#C07F4A" stroke-width="4" opacity="0.45"/><path d="M-20 650 Q82 647 185 650 Q275 642 365 650 Q471 653 577 650 Q718 663 860 650 Q964 662 1068 650 Q1150 656 1232 650 Q1343 650 1454 650 Q1606 638 1757 650 Q1857 637 1957 650 Q2080 664 2203 650" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 691 Q105 677 230 691 Q360 701 490 691 Q630 695 770 691 Q927 692 1083 691 Q1214 686 1344 691 Q1503 681 1662 691 Q1757 678 1852 691 Q1967 704 2082 691" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 737 Q117 742 253 737 Q397 746 541 737 Q633 724 726 737 Q855 737 985 737 Q1107 744 1228 737 Q1322 742 1416 737 Q1530 734 1645 737 Q1744 730 1844 737 Q1970 738 2096 737" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 772 Q117 761 255 772 Q387 763 519 772 Q667 786 816 772 Q916 781 1017 772 Q1114 767 1212 772 Q1300 771 1388 772 Q1477 778 1565 772 Q1691 770 1817 772 Q1954 765 2091 772" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 823 Q70 829 160 823 Q279 829 398 823 Q540 833 681 823 Q783 810 884 823 Q1038 829 1192 823 Q1322 813 1453 823 Q1561 821 1669 823 Q1783 819 1898 823 Q2005 819 2111 823" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 854 Q119 855 259 854 Q389 866 520 854 Q663 856 807 854 Q949 853 1090 854 Q1215 863 1339 854 Q1468 850 1598 854 Q1680 862 1761 854 Q1868 852 1976 854" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 895 Q79 886 179 895 Q335 902 492 895 Q576 894 660 895 Q748 905 836 895 Q957 894 1078 895 Q1170 903 1261 895 Q1345 902 1428 895 Q1510 909 1592 895 Q1676 889 1759 895 Q1873 903 1987 895" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 948 Q97 958 213 948 Q306 955 399 948 Q514 950 628 948 Q713 945 797 948 Q941 954 1086 948 Q1211 946 1336 948 Q1419 953 1502 948 Q1618 954 1733 948 Q1862 945 1991 948" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 992 Q96 992 213 992 Q332 995 451 992 Q537 993 624 992 Q759 978 894 992 Q1031 992 1168 992 Q1262 998 1356 992 Q1438 997 1521 992 Q1645 984 1770 992 Q1889 989 2007 992" fill="none" stroke="#C07F4A" stroke-width="2" opacity="0.45"/><path d="M-20 1023 Q118 1023 257 1023 Q414 1013 571 1023 Q715 1029 858 1023 Q940 1025 1021 1023 Q1124 1029 1228 1023 Q1385 1028 1542 1023 Q1661 1026 1781 1023 Q1881 1022 1981 1023" fill="none" stroke="#C07F4A" stroke-width="2" opacity="0.45"/><path d="M-20 1063 Q108 1060 235 1063 Q371 1054 507 1063 Q660 1070 813 1063 Q924 1055 1034 1063 Q1194 1062 1354 1063 Q1498 1058 1643 1063 Q1759 1066 1874 1063 Q2016 1074 2157 1063" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><ellipse cx="1650" cy="210" rx="34" ry="12" fill="none" stroke="#B3733F" stroke-width="3" opacity="0.5"/><ellipse cx="260" cy="930" rx="28" ry="10" fill="none" stroke="#B3733F" stroke-width="3" opacity="0.5"/></svg>
+        <div id="r-pour1"></div><div id="r-pour2"></div>
+        <svg id="r-bowl" viewBox="0 0 560 560">
+          <circle cx="280" cy="280" r="262" fill="#FAFAF7" stroke="#3A2418" stroke-width="6"/>
+          <circle cx="280" cy="280" r="246" fill="none" stroke="#4D7CC2" stroke-width="12"/>
+          <circle cx="280" cy="280" r="214" fill="#EFEDE6" stroke="#3A2418" stroke-width="4"/>
+          <circle id="r-batter" cx="280" cy="280" r="206" fill="#F3D9A4"/>
+          <g id="r-lumps"><circle cx="429" cy="429" r="13" fill="#E2C384"/><circle cx="342" cy="225" r="9" fill="#E2C384"/><circle cx="217" cy="151" r="13" fill="#E2C384"/><circle cx="250" cy="384" r="10" fill="#E2C384"/><circle cx="417" cy="384" r="8" fill="#E2C384"/><circle cx="193" cy="403" r="11" fill="#E2C384"/><circle cx="424" cy="249" r="8" fill="#E2C384"/><circle cx="319" cy="364" r="10" fill="#E2C384"/><circle cx="156" cy="230" r="14" fill="#E2C384"/><circle cx="357" cy="165" r="9" fill="#E2C384"/><circle cx="160" cy="148" r="13" fill="#E2C384"/><circle cx="183" cy="298" r="11" fill="#E2C384"/><circle cx="187" cy="350" r="9" fill="#E2C384"/><circle cx="323" cy="165" r="11" fill="#E2C384"/><circle cx="194" cy="211" r="14" fill="#E2C384"/><circle cx="371" cy="221" r="13" fill="#E2C384"/></g>
+          <ellipse id="r-flourmound" cx="280" cy="284" rx="104" ry="86" fill="#FFFFFF" stroke="#E2DED4" stroke-width="4"/>
+          <g id="r-sugar"><circle cx="273" cy="287" r="5" fill="#FFFFFF" stroke="#D9D2C4" stroke-width="2"/><circle cx="339" cy="276" r="5" fill="#FFFFFF" stroke="#D9D2C4" stroke-width="2"/><circle cx="281" cy="290" r="5" fill="#FFFFFF" stroke="#D9D2C4" stroke-width="2"/><circle cx="236" cy="281" r="5" fill="#FFFFFF" stroke="#D9D2C4" stroke-width="2"/><circle cx="298" cy="315" r="5" fill="#FFFFFF" stroke="#D9D2C4" stroke-width="2"/><circle cx="223" cy="256" r="5" fill="#FFFFFF" stroke="#D9D2C4" stroke-width="2"/><circle cx="223" cy="317" r="5" fill="#FFFFFF" stroke="#D9D2C4" stroke-width="2"/><circle cx="307" cy="225" r="5" fill="#FFFFFF" stroke="#D9D2C4" stroke-width="2"/><circle cx="348" cy="336" r="5" fill="#FFFFFF" stroke="#D9D2C4" stroke-width="2"/><circle cx="302" cy="294" r="5" fill="#FFFFFF" stroke="#D9D2C4" stroke-width="2"/><circle cx="232" cy="222" r="5" fill="#FFFFFF" stroke="#D9D2C4" stroke-width="2"/><circle cx="284" cy="227" r="5" fill="#FFFFFF" stroke="#D9D2C4" stroke-width="2"/><circle cx="237" cy="249" r="5" fill="#FFFFFF" stroke="#D9D2C4" stroke-width="2"/><circle cx="214" cy="276" r="5" fill="#FFFFFF" stroke="#D9D2C4" stroke-width="2"/><circle cx="272" cy="321" r="5" fill="#FFFFFF" stroke="#D9D2C4" stroke-width="2"/><circle cx="283" cy="297" r="5" fill="#FFFFFF" stroke="#D9D2C4" stroke-width="2"/><circle cx="280" cy="299" r="5" fill="#FFFFFF" stroke="#D9D2C4" stroke-width="2"/><circle cx="274" cy="253" r="5" fill="#FFFFFF" stroke="#D9D2C4" stroke-width="2"/></g>
+          <g id="r-egg1"><path d="M150 250 Q160 196 214 204 Q250 230 230 280 Q190 300 150 250 Z" fill="#FFFDF5" stroke="#E6E0CF" stroke-width="3"/><circle cx="194" cy="246" r="26" fill="#F5A623" stroke="#3A2418" stroke-width="4"/></g>
+          <g id="r-egg2"><path d="M330 300 Q336 250 392 258 Q420 296 396 334 Q350 346 330 300 Z" fill="#FFFDF5" stroke="#E6E0CF" stroke-width="3"/><circle cx="372" cy="298" r="26" fill="#F5A623" stroke="#3A2418" stroke-width="4"/></g>
+          <path d="M120 170 Q170 100 260 86" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" opacity="0.9"/>
+        </svg>
+        <svg id="r-whisk" viewBox="0 0 560 560">
+          <g id="r-whiskg">
+            <rect x="340" y="250" width="320" height="40" rx="20" fill="#C9884F" stroke="#3A2418" stroke-width="6"/>
+            <path d="M340 270 Q260 170 170 230 Q150 270 170 310 Q260 370 340 270 M340 270 Q250 200 190 250 Q180 270 190 290 Q250 340 340 270 M340 270 L180 270" fill="none" stroke="#9AA3AD" stroke-width="8" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <div id="r-step1" class="title r-step" data-layout-allow-overlap><span class="w r1-w">Mehl,</span> <span class="w r1-w">Zucker,</span> <span class="w r1-w">Salz</span></div>
+        <div id="r-step2" class="title r-step" data-layout-allow-overlap><span class="w r2-w">2</span> <span class="w r2-w">Eier</span> <span class="w r2-w">rein</span></div>
+        <div id="r-step3" class="title r-step" data-layout-allow-overlap><span class="w r3-w">Milch</span> <span class="w r3-w">dazu</span> <span class="w r3-w">–</span><br><span class="w r3-w">rühren!</span></div>
+      </div>
+      <div id="r-close">
+        <div class="wall"></div>
+        <svg id="r-mia" viewBox="0 0 400 560">
+<g id="rm-mia">
+ <g id="rm-body">
+  <path d="M104 318 Q200 262 296 318 L330 560 L70 560 Z" fill="#F7C548" stroke="#3A2418" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M138 340 L262 340 L290 560 L110 560 Z" fill="#E8553D" stroke="#3A2418" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M146 342 L166 292 M254 342 L234 292" stroke="#E8553D" stroke-width="16" stroke-linecap="round"/>
+  <rect x="168" y="400" width="64" height="46" rx="8" fill="#F27561" stroke="#3A2418" stroke-width="5"/>
+  <rect x="182" y="258" width="36" height="36" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+ </g>
+ <g id="rm-armL">
+  <path d="M128 305 L98 400 L118 482" fill="none" stroke="#3A2418" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M128 305 L98 400 L118 482" fill="none" stroke="#F2C29B" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="126" cy="318" r="32" fill="#F7C548" stroke="#3A2418" stroke-width="6"/>
+  <circle cx="118" cy="486" r="26" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+ </g>
+ <g id="rm-armR">
+  <path d="M272 305 L302 400 L282 482" fill="none" stroke="#3A2418" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M272 305 L302 400 L282 482" fill="none" stroke="#F2C29B" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="274" cy="318" r="32" fill="#F7C548" stroke="#3A2418" stroke-width="6"/>
+  <circle cx="282" cy="486" r="26" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+ </g>
+ <g id="rm-armRb" opacity="0">
+  <path d="M272 305 L330 392 L250 262" fill="none" stroke="#3A2418" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M272 305 L330 392 L250 262" fill="none" stroke="#F2C29B" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="274" cy="318" r="32" fill="#F7C548" stroke="#3A2418" stroke-width="6"/>
+  <path d="M244 262 L226 232 M226 232 L214 214 M226 232 L222 210 M226 232 L232 208 M226 232 L240 210" stroke="#9AA3AD" stroke-width="7" stroke-linecap="round"/>
+  <path d="M206 206 Q222 192 244 204 L238 214 Q222 206 210 214 Z" fill="#E3A653" stroke="#3A2418" stroke-width="4"/>
+  <circle cx="250" cy="262" r="26" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+ </g>
+ <g id="rm-head">
+  <circle cx="92" cy="118" r="50" fill="#4A2C1D" stroke="#3A2418" stroke-width="6"/>
+  <circle cx="308" cy="118" r="50" fill="#4A2C1D" stroke="#3A2418" stroke-width="6"/>
+  <circle cx="102" cy="182" r="20" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+  <circle cx="298" cy="182" r="20" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+  <circle cx="200" cy="172" r="100" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+  <path d="M100 160 Q104 66 200 64 Q296 66 300 160 Q284 118 246 116 Q226 92 196 112 Q170 96 150 118 Q118 120 100 160 Z" fill="#4A2C1D" stroke="#3A2418" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M116 112 Q200 40 284 112" fill="none" stroke="#E8553D" stroke-width="16" stroke-linecap="round"/>
+  <path d="M146 146 Q160 138 174 146 M226 146 Q240 138 254 146" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round"/>
+  <g id="rm-eyes">
+   <ellipse cx="160" cy="176" rx="11" ry="15" fill="#3A2418"/><circle cx="164" cy="170" r="4" fill="#fff"/>
+   <ellipse cx="240" cy="176" rx="11" ry="15" fill="#3A2418"/><circle cx="244" cy="170" r="4" fill="#fff"/>
+  </g>
+  <path id="rm-eyesC" opacity="0" d="M147 180 Q160 166 173 180 M227 180 Q240 166 253 180" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="134" cy="210" r="17" fill="#F59E8B" opacity="0.75"/>
+  <circle cx="266" cy="210" r="17" fill="#F59E8B" opacity="0.75"/>
+  <g fill="#C98A62"><circle cx="128" cy="196" r="3"/><circle cx="140" cy="202" r="3"/><circle cx="272" cy="196" r="3"/><circle cx="260" cy="202" r="3"/></g>
+  <path d="M194 196 Q200 204 206 196" fill="none" stroke="#3A2418" stroke-width="5" stroke-linecap="round"/>
+  <path id="rm-m-smile" d="M172 226 Q200 250 228 226" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round"/>
+  <g id="rm-m-open" opacity="0"><ellipse cx="200" cy="236" rx="20" ry="24" fill="#8C2F25" stroke="#3A2418" stroke-width="5"/><ellipse cx="200" cy="250" rx="11" ry="7" fill="#E46F68"/></g>
+  <g id="rm-m-grin" opacity="0"><path d="M164 222 Q200 278 236 222 Z" fill="#8C2F25" stroke="#3A2418" stroke-width="5" stroke-linejoin="round"/><path d="M170 225 L230 225 L226 234 L174 234 Z" fill="#fff"/></g>
+  <g id="rm-m-chew" opacity="0"><ellipse cx="200" cy="232" rx="14" ry="8" fill="#8C2F25" stroke="#3A2418" stroke-width="5"/></g>
+  <g id="rm-flour" opacity="1" fill="#FFFFFF">
+   <circle cx="200" cy="196" r="13"/><circle cx="212" cy="188" r="8"/><circle cx="148" cy="214" r="10"/><circle cx="160" cy="220" r="6"/>
+   <circle cx="238" cy="126" r="9"/><circle cx="252" cy="132" r="6"/>
+  </g>
+ </g>
+</g></svg>
+      </div>
+      <svg id="r-puffs" viewBox="0 0 1920 1080"><circle class="r-puff" cx="810" cy="498" r="205" fill="#FFFFFF"/><circle class="r-puff" cx="1034" cy="380" r="219" fill="#FFFFFF"/><circle class="r-puff" cx="811" cy="443" r="197" fill="#FFFFFF"/><circle class="r-puff" cx="871" cy="459" r="127" fill="#FFFFFF"/><circle class="r-puff" cx="747" cy="573" r="144" fill="#FFFFFF"/><circle class="r-puff" cx="1013" cy="489" r="165" fill="#FFFFFF"/><circle class="r-puff" cx="1199" cy="533" r="177" fill="#FFFFFF"/><circle class="r-puff" cx="1151" cy="413" r="135" fill="#FFFFFF"/><circle class="r-puff" cx="1172" cy="667" r="145" fill="#FFFFFF"/><circle class="r-puff" cx="799" cy="636" r="214" fill="#FFFFFF"/><circle class="r-puff" cx="802" cy="720" r="208" fill="#FFFFFF"/><circle class="r-puff" cx="1014" cy="509" r="130" fill="#FFFFFF"/><circle class="r-puff" cx="720" cy="725" r="144" fill="#FFFFFF"/><circle class="r-puff" cx="1066" cy="443" r="202" fill="#FFFFFF"/></svg>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    function rig(P) {
+      const q = (s) => "#" + P + "-" + s;
+      return {
+        blink(t) {
+          tl.to(q("eyes"), { scaleY: 0.1, svgOrigin: "200 176", duration: 0.06, ease: "power1.in" }, t);
+          tl.to(q("eyes"), { scaleY: 1, svgOrigin: "200 176", duration: 0.09, ease: "power1.out" }, t + 0.06);
+        },
+        mouth(t, name) {
+          ["smile", "open", "grin", "chew"].forEach((m) => tl.set(q("m-" + m), { opacity: m === name ? 1 : 0 }, t));
+        },
+        eyes(t, closed) {
+          tl.set(q("eyes"), { opacity: closed ? 0 : 1 }, t);
+          tl.set(q("eyesC"), { opacity: closed ? 1 : 0 }, t);
+        },
+        breathe(t0, t1) {
+          const n = Math.max(1, Math.floor((t1 - t0) / 0.9));
+          tl.fromTo(q("body"), { y: 0 }, { y: -4, duration: 0.9, ease: "sine.inOut", yoyo: true, repeat: n - 1 }, t0);
+        },
+        head(t, rot, d) {
+          tl.to(q("head"), { rotation: rot, svgOrigin: "200 265", duration: d || 0.3, ease: "back.out(1.6)" }, t);
+        },
+        arm(t, side, rot, d, ease) {
+          const o = side === "L" ? "128 305" : "272 305";
+          tl.to(q("arm" + side), { rotation: rot, svgOrigin: o, duration: d || 0.35, ease: ease || "back.out(1.4)" }, t);
+        },
+      };
+    }
+
+    const m = rig("rm");
+    // flour pours in, the mound grows
+    tl.fromTo("#r-step1 .r1-w", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, stagger: 0.08, ease: "power4.out" }, 0.3);
+    tl.fromTo("#r-pour1", { scaleY: 0 }, { scaleY: 1, duration: 0.35, ease: "power2.in" }, 0.4);
+    tl.fromTo("#r-flourmound", { attr: { rx: 8, ry: 6 } }, { attr: { rx: 104, ry: 86 }, duration: 1.4, ease: "power2.out" }, 0.7);
+    tl.to("#r-pour1", { scaleY: 0, transformOrigin: "50% 100%", duration: 0.3, ease: "power2.in" }, 2.0);
+    tl.fromTo("#r-sugar", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 2.2);
+    tl.to("#r-step1", { opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power2.in" }, 3.0);
+    // two eggs drop in
+    tl.fromTo("#r-step2 .r2-w", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, stagger: 0.08, ease: "power4.out" }, 3.2);
+    tl.fromTo("#r-egg1", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, svgOrigin: "194 246", duration: 0.25, ease: "back.out(2)" }, 3.4);
+    tl.fromTo("#r-egg2", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, svgOrigin: "372 298", duration: 0.25, ease: "back.out(2)" }, 3.8);
+    tl.to("#r-step2", { opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power2.in" }, 5.5);
+    // milk and whisking: the batter turns smooth
+    tl.fromTo("#r-step3 .r3-w", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, stagger: 0.08, ease: "power4.out" }, 5.7);
+    tl.fromTo("#r-pour2", { scaleY: 0 }, { scaleY: 1, duration: 0.3, ease: "power2.in" }, 5.8);
+    tl.to("#r-pour2", { scaleY: 0, transformOrigin: "50% 100%", duration: 0.3, ease: "power2.in" }, 6.8);
+    tl.fromTo("#r-batter", { opacity: 0, attr: { r: 80 } }, { opacity: 1, attr: { r: 206 }, duration: 1.2, ease: "power2.out" }, 6.0);
+    tl.fromTo("#r-lumps", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 6.3);
+    tl.to(["#r-flourmound", "#r-sugar", "#r-egg1", "#r-egg2"], { opacity: 0, duration: 0.9, ease: "power1.inOut" }, 6.4);
+    tl.fromTo("#r-whisk", { opacity: 0, x: 300 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 6.2);
+    tl.fromTo("#r-whiskg", { rotation: 0 }, { rotation: 900, svgOrigin: "280 280", duration: 2.4, ease: "none" }, 6.5);
+    tl.to("#r-lumps", { opacity: 0, duration: 1.4, ease: "power1.in" }, 7.2);
+    tl.to("#r-step3", { opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power2.in" }, 8.4);
+    // the flour cloud
+    tl.fromTo(".r-puff", { opacity: 1, scale: 0, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1.6, duration: 0.45, stagger: 0.015, ease: "expo.out" }, 8.6);
+    tl.set("#r-over", { opacity: 0 }, 9.05);
+    tl.set("#r-close", { opacity: 1 }, 9.05);
+    tl.to(".r-puff", { opacity: 0, scale: 2.4, duration: 0.8, stagger: 0.02, ease: "power2.out" }, 9.1);
+    // close-up: flour on her nose, she laughs
+    m.mouth(9.05, "grin"); m.eyes(9.05, true);
+    tl.fromTo("#rm-head", { rotation: -3 }, { rotation: 3, svgOrigin: "200 265", duration: 0.22, yoyo: true, repeat: 5, ease: "sine.inOut" }, 9.2);
+    m.eyes(10.6, false); m.blink(11.0);
+    // whip left to the stove
+    tl.to("#r-cam", { x: -1900, filter: "blur(14px)", duration: 0.4, ease: "power3.in" }, 11.6);
+
+    window.__timelines["ruehren"] = tl;
+  </script>
+</template>

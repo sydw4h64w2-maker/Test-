@@ -1,0 +1,165 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "Nunito", sans-serif; color: #3A2418; }
+    .wall { position: absolute; inset: 0; background-color: #BFE3D0;
+      background-image: linear-gradient(#F4FBF7 4px, transparent 4px), linear-gradient(90deg, #F4FBF7 4px, transparent 4px);
+      background-size: 120px 120px; background-position: -2px -2px; }
+    .ctop { position: absolute; left: 0; right: 0; top: 780px; height: 66px; background: #E7A973;
+      border-top: 6px solid #3A2418; border-bottom: 6px solid #3A2418; }
+    .cfront { position: absolute; left: 0; right: 0; top: 846px; bottom: 0; background-color: #C98450;
+      background-image: repeating-linear-gradient(0deg, transparent 0 38px, rgba(140, 82, 40, 0.35) 38px 41px); }
+    .wood { position: absolute; inset: 0; background: #D9965F; }
+    .title { position: absolute; font-weight: 900; letter-spacing: -0.01em; line-height: 1; }
+    .w { display: inline-block; }
+
+    #i-cam { position: absolute; inset: 0; transform-origin: 1390px 700px; }
+    #i-window { position: absolute; left: 90px; top: 110px; width: 380px; height: 330px; background: #CDEBFA;
+      border: 6px solid #3A2418; border-radius: 10px; box-shadow: inset 0 0 0 14px #FFFFFF; }
+    #i-window::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 12px; margin-left: -6px; background: #FFFFFF; }
+    #i-window::after { content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 12px; margin-top: -6px; background: #FFFFFF; }
+    #i-sill { position: absolute; left: 70px; top: 440px; width: 420px; height: 26px; background: #FFFFFF; border: 6px solid #3A2418; border-radius: 6px; }
+    #i-plant { position: absolute; left: 380px; top: 340px; width: 90px; height: 104px; }
+    #i-mia { position: absolute; left: 520px; top: 216px; width: 560px; height: 784px; }
+    #i-book { position: absolute; left: 1200px; top: 326px; width: 380px; height: 480px; }
+    #i-heute { left: 1110px; top: 112px; font-size: 64px; }
+    #i-rezept { left: 1110px; top: 182px; font-size: 120px; color: #C23B26; }
+
+  </style>
+  <div id="root" data-composition-id="intro" data-width="1920" data-height="1080">
+    <div class="wall"></div>
+    <div id="i-cam">
+      <div id="i-window"></div><div id="i-sill"></div>
+      <svg id="i-plant" viewBox="0 0 90 104"><path d="M45 60 Q20 30 10 6 Q40 18 45 60 Q52 20 80 10 Q70 40 45 60" fill="#5FAF6E" stroke="#3A2418" stroke-width="5" stroke-linejoin="round"/><path d="M18 58 L72 58 L64 100 L26 100 Z" fill="#D9774B" stroke="#3A2418" stroke-width="5" stroke-linejoin="round"/></svg>
+      <svg id="i-mia" viewBox="0 0 400 560">
+<g id="im-mia">
+ <g id="im-body">
+  <path d="M104 318 Q200 262 296 318 L330 560 L70 560 Z" fill="#F7C548" stroke="#3A2418" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M138 340 L262 340 L290 560 L110 560 Z" fill="#E8553D" stroke="#3A2418" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M146 342 L166 292 M254 342 L234 292" stroke="#E8553D" stroke-width="16" stroke-linecap="round"/>
+  <rect x="168" y="400" width="64" height="46" rx="8" fill="#F27561" stroke="#3A2418" stroke-width="5"/>
+  <rect x="182" y="258" width="36" height="36" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+ </g>
+ <g id="im-armL">
+  <path d="M128 305 L98 400 L118 482" fill="none" stroke="#3A2418" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M128 305 L98 400 L118 482" fill="none" stroke="#F2C29B" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="126" cy="318" r="32" fill="#F7C548" stroke="#3A2418" stroke-width="6"/>
+  <circle cx="118" cy="486" r="26" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+ </g>
+ <g id="im-armR">
+  <path d="M272 305 L302 400 L282 482" fill="none" stroke="#3A2418" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M272 305 L302 400 L282 482" fill="none" stroke="#F2C29B" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="274" cy="318" r="32" fill="#F7C548" stroke="#3A2418" stroke-width="6"/>
+  <circle cx="282" cy="486" r="26" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+ </g>
+ <g id="im-armRb" opacity="0">
+  <path d="M272 305 L330 392 L250 262" fill="none" stroke="#3A2418" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M272 305 L330 392 L250 262" fill="none" stroke="#F2C29B" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="274" cy="318" r="32" fill="#F7C548" stroke="#3A2418" stroke-width="6"/>
+  <path d="M244 262 L226 232 M226 232 L214 214 M226 232 L222 210 M226 232 L232 208 M226 232 L240 210" stroke="#9AA3AD" stroke-width="7" stroke-linecap="round"/>
+  <path d="M206 206 Q222 192 244 204 L238 214 Q222 206 210 214 Z" fill="#E3A653" stroke="#3A2418" stroke-width="4"/>
+  <circle cx="250" cy="262" r="26" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+ </g>
+ <g id="im-head">
+  <circle cx="92" cy="118" r="50" fill="#4A2C1D" stroke="#3A2418" stroke-width="6"/>
+  <circle cx="308" cy="118" r="50" fill="#4A2C1D" stroke="#3A2418" stroke-width="6"/>
+  <circle cx="102" cy="182" r="20" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+  <circle cx="298" cy="182" r="20" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+  <circle cx="200" cy="172" r="100" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+  <path d="M100 160 Q104 66 200 64 Q296 66 300 160 Q284 118 246 116 Q226 92 196 112 Q170 96 150 118 Q118 120 100 160 Z" fill="#4A2C1D" stroke="#3A2418" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M116 112 Q200 40 284 112" fill="none" stroke="#E8553D" stroke-width="16" stroke-linecap="round"/>
+  <path d="M146 146 Q160 138 174 146 M226 146 Q240 138 254 146" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round"/>
+  <g id="im-eyes">
+   <ellipse cx="160" cy="176" rx="11" ry="15" fill="#3A2418"/><circle cx="164" cy="170" r="4" fill="#fff"/>
+   <ellipse cx="240" cy="176" rx="11" ry="15" fill="#3A2418"/><circle cx="244" cy="170" r="4" fill="#fff"/>
+  </g>
+  <path id="im-eyesC" opacity="0" d="M147 180 Q160 166 173 180 M227 180 Q240 166 253 180" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="134" cy="210" r="17" fill="#F59E8B" opacity="0.75"/>
+  <circle cx="266" cy="210" r="17" fill="#F59E8B" opacity="0.75"/>
+  <g fill="#C98A62"><circle cx="128" cy="196" r="3"/><circle cx="140" cy="202" r="3"/><circle cx="272" cy="196" r="3"/><circle cx="260" cy="202" r="3"/></g>
+  <path d="M194 196 Q200 204 206 196" fill="none" stroke="#3A2418" stroke-width="5" stroke-linecap="round"/>
+  <path id="im-m-smile" d="M172 226 Q200 250 228 226" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round"/>
+  <g id="im-m-open" opacity="0"><ellipse cx="200" cy="236" rx="20" ry="24" fill="#8C2F25" stroke="#3A2418" stroke-width="5"/><ellipse cx="200" cy="250" rx="11" ry="7" fill="#E46F68"/></g>
+  <g id="im-m-grin" opacity="0"><path d="M164 222 Q200 278 236 222 Z" fill="#8C2F25" stroke="#3A2418" stroke-width="5" stroke-linejoin="round"/><path d="M170 225 L230 225 L226 234 L174 234 Z" fill="#fff"/></g>
+  <g id="im-m-chew" opacity="0"><ellipse cx="200" cy="232" rx="14" ry="8" fill="#8C2F25" stroke="#3A2418" stroke-width="5"/></g>
+  <g id="im-flour" opacity="0" fill="#FFFFFF">
+   <circle cx="200" cy="196" r="13"/><circle cx="212" cy="188" r="8"/><circle cx="148" cy="214" r="10"/><circle cx="160" cy="220" r="6"/>
+   <circle cx="238" cy="126" r="9"/><circle cx="252" cy="132" r="6"/>
+  </g>
+ </g>
+</g></svg>
+      <div class="ctop"></div><div class="cfront"></div>
+      <svg id="i-book" viewBox="0 0 380 480">
+        <rect x="6" y="6" width="350" height="468" rx="14" fill="#4D7CC2" stroke="#3A2418" stroke-width="6"/>
+        <rect x="350" y="20" width="24" height="444" rx="6" fill="#FFF3DC" stroke="#3A2418" stroke-width="5"/>
+        <rect x="6" y="6" width="36" height="468" rx="10" fill="#3A63A3" stroke="#3A2418" stroke-width="6"/>
+        <rect x="74" y="60" width="250" height="84" rx="8" fill="#FFF3DC" stroke="#3A2418" stroke-width="5"/>
+        <text x="199" y="117" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="44" fill="#3A2418">REZEPTE</text>
+        <ellipse cx="199" cy="236" rx="96" ry="26" fill="#FFFFFF" stroke="#3A2418" stroke-width="5"/>
+        <ellipse cx="199" cy="222" rx="74" ry="18" fill="#E8B15C" stroke="#3A2418" stroke-width="5"/>
+        <ellipse cx="199" cy="206" rx="74" ry="18" fill="#E8B15C" stroke="#3A2418" stroke-width="5"/>
+        <ellipse cx="199" cy="190" rx="74" ry="18" fill="#E8B15C" stroke="#3A2418" stroke-width="5"/>
+      </svg>
+      <div id="i-heute" class="title"><span class="w ih-w">Heute:</span></div>
+      <div id="i-rezept" class="title"><span class="w ir-w">Pfannkuchen!</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    function rig(P) {
+      const q = (s) => "#" + P + "-" + s;
+      return {
+        blink(t) {
+          tl.to(q("eyes"), { scaleY: 0.1, svgOrigin: "200 176", duration: 0.06, ease: "power1.in" }, t);
+          tl.to(q("eyes"), { scaleY: 1, svgOrigin: "200 176", duration: 0.09, ease: "power1.out" }, t + 0.06);
+        },
+        mouth(t, name) {
+          ["smile", "open", "grin", "chew"].forEach((m) => tl.set(q("m-" + m), { opacity: m === name ? 1 : 0 }, t));
+        },
+        eyes(t, closed) {
+          tl.set(q("eyes"), { opacity: closed ? 0 : 1 }, t);
+          tl.set(q("eyesC"), { opacity: closed ? 1 : 0 }, t);
+        },
+        breathe(t0, t1) {
+          const n = Math.max(1, Math.floor((t1 - t0) / 0.9));
+          tl.fromTo(q("body"), { y: 0 }, { y: -4, duration: 0.9, ease: "sine.inOut", yoyo: true, repeat: n - 1 }, t0);
+        },
+        head(t, rot, d) {
+          tl.to(q("head"), { rotation: rot, svgOrigin: "200 265", duration: d || 0.3, ease: "back.out(1.6)" }, t);
+        },
+        arm(t, side, rot, d, ease) {
+          const o = side === "L" ? "128 305" : "272 305";
+          tl.to(q("arm" + side), { rotation: rot, svgOrigin: o, duration: d || 0.35, ease: ease || "back.out(1.4)" }, t);
+        },
+      };
+    }
+
+    const m = rig("im");
+    // the book drops onto the counter from Mia's raised hands
+    tl.fromTo("#i-book", { y: -330, rotation: -8 }, { y: 0, rotation: 0, duration: 0.4, ease: "power3.in" }, 0);
+    tl.fromTo("#i-book", { scaleY: 1 }, { scaleY: 0.94, transformOrigin: "50% 100%", duration: 0.06, yoyo: true, repeat: 1, ease: "power1.out" }, 0.4);
+    tl.fromTo("#im-armR", { rotation: -120 }, { rotation: -40, svgOrigin: "272 305", duration: 0.42, ease: "power3.in" }, 0);
+    tl.fromTo("#im-armL", { rotation: 30 }, { rotation: 10, svgOrigin: "128 305", duration: 0.5, ease: "power2.out" }, 0.05);
+    m.mouth(0, "grin");
+    // the take: she leans in to the camera, mouth open on the announcement
+    tl.fromTo("#im-mia", { y: 0 }, { y: -18, duration: 0.5, ease: "back.out(1.8)" }, 0.55);
+    m.head(0.55, -6, 0.4);
+    m.mouth(0.9, "open");
+    m.mouth(2.2, "grin");
+    m.head(2.2, 4, 0.5);
+    m.blink(1.6); m.blink(3.4); m.blink(4.9);
+    m.mouth(3.3, "smile");
+    m.arm(3.0, "L", 40, 0.4);
+    m.arm(3.9, "L", 14, 0.5, "power2.inOut");
+    m.breathe(0.6, 5.6);
+    // title, word by word
+    tl.fromTo(".ih-w", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out" }, 1.0);
+    tl.fromTo(".ir-w", { opacity: 0, filter: "blur(8px)", scale: 0.92 }, { opacity: 1, filter: "blur(0px)", scale: 1, duration: 0.3, ease: "expo.out" }, 1.3);
+    tl.to(["#i-heute", "#i-rezept"], { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in", stagger: 0.06 }, 5.5);
+    // push into the blue cover: it becomes the next frame
+    tl.to("#i-cam", { scale: 6.4, duration: 1.1, ease: "power3.in" }, 5.9);
+    m.head(5.9, 0, 0.3);
+
+    window.__timelines["intro"] = tl;
+  </script>
+</template>

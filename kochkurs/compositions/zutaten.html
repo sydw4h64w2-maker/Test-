@@ -1,0 +1,169 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "Nunito", sans-serif; color: #3A2418; }
+    .wall { position: absolute; inset: 0; background-color: #BFE3D0;
+      background-image: linear-gradient(#F4FBF7 4px, transparent 4px), linear-gradient(90deg, #F4FBF7 4px, transparent 4px);
+      background-size: 120px 120px; background-position: -2px -2px; }
+    .ctop { position: absolute; left: 0; right: 0; top: 780px; height: 66px; background: #E7A973;
+      border-top: 6px solid #3A2418; border-bottom: 6px solid #3A2418; }
+    .cfront { position: absolute; left: 0; right: 0; top: 846px; bottom: 0; background-color: #C98450;
+      background-image: repeating-linear-gradient(0deg, transparent 0 38px, rgba(140, 82, 40, 0.35) 38px 41px); }
+    .wood { position: absolute; inset: 0; background: #D9965F; }
+    .title { position: absolute; font-weight: 900; letter-spacing: -0.01em; line-height: 1; }
+    .w { display: inline-block; }
+
+    .z-place { position: absolute; }
+    .z-item { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    .z-item svg { width: 100%; height: 100%; display: block; overflow: visible; }
+    .z-handwrap { position: absolute; left: 50%; top: 50%; width: 0; height: 0; }
+    .z-hand { position: absolute; width: 160px; height: 760px; left: -80px; top: -40px; transform-origin: 80px 40px; overflow: visible; }
+    .z-labelw { position: absolute; }
+    .z-label { white-space: nowrap; font-weight: 800; font-size: 44px; padding: 10px 22px 12px;
+      background: #FFF8EC; border: 5px solid #3A2418; border-radius: 6px; box-shadow: 0 8px 0 rgba(58, 36, 24, 0.18); }
+    #z-bowl { position: absolute; left: 680px; top: 260px; width: 560px; height: 560px; }
+    #z-cover { position: absolute; inset: 0; background: #4D7CC2; }
+
+  </style>
+  <div id="root" data-composition-id="zutaten" data-width="1920" data-height="1080">
+    <div class="wood"></div>
+    <svg class="grain" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;inset:0"><path d="M-20 17 Q72 21 164 17 Q250 18 336 17 Q445 5 554 17 Q675 4 795 17 Q910 5 1025 17 Q1112 15 1199 17 Q1345 7 1492 17 Q1589 21 1687 17 Q1843 19 1999 17" fill="none" stroke="#C07F4A" stroke-width="4" opacity="0.45"/><path d="M-20 55 Q78 56 175 55 Q266 53 357 55 Q480 57 603 55 Q728 60 853 55 Q941 57 1029 55 Q1124 44 1219 55 Q1356 57 1493 55 Q1623 55 1752 55 Q1875 63 1997 55" fill="none" stroke="#C07F4A" stroke-width="4" opacity="0.45"/><path d="M-20 105 Q96 100 213 105 Q356 111 500 105 Q599 107 699 105 Q821 116 943 105 Q1081 99 1219 105 Q1378 95 1536 105 Q1650 113 1763 105 Q1855 105 1947 105 Q2031 110 2114 105" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 143 Q88 143 196 143 Q340 131 484 143 Q571 137 659 143 Q794 131 930 143 Q1069 138 1207 143 Q1333 149 1459 143 Q1575 150 1691 143 Q1842 139 1993 143" fill="none" stroke="#C07F4A" stroke-width="4" opacity="0.45"/><path d="M-20 186 Q109 186 238 186 Q335 180 433 186 Q572 183 711 186 Q864 186 1017 186 Q1111 183 1204 186 Q1306 176 1409 186 Q1523 187 1637 186 Q1774 199 1910 186 Q2045 182 2180 186" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 224 Q74 217 168 224 Q267 224 366 224 Q493 218 620 224 Q700 222 780 224 Q890 226 1000 224 Q1156 230 1312 224 Q1433 228 1554 224 Q1689 212 1823 224 Q1975 232 2127 224" fill="none" stroke="#C07F4A" stroke-width="4" opacity="0.45"/><path d="M-20 270 Q92 270 203 270 Q315 262 427 270 Q586 269 745 270 Q833 273 922 270 Q1010 272 1099 270 Q1222 283 1345 270 Q1474 258 1603 270 Q1699 267 1796 270 Q1927 283 2057 270" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 314 Q69 313 158 314 Q317 313 475 314 Q580 304 685 314 Q825 320 965 314 Q1083 319 1201 314 Q1323 305 1444 314 Q1600 310 1756 314 Q1891 325 2027 314" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 364 Q129 369 278 364 Q379 360 480 364 Q573 371 667 364 Q789 371 912 364 Q1018 356 1125 364 Q1270 377 1414 364 Q1563 372 1711 364 Q1856 370 2002 364" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 393 Q99 400 219 393 Q378 401 537 393 Q655 385 773 393 Q901 389 1030 393 Q1174 399 1319 393 Q1427 406 1535 393 Q1621 382 1708 393 Q1825 389 1943 393 Q2062 407 2180 393" fill="none" stroke="#C07F4A" stroke-width="2" opacity="0.45"/><path d="M-20 440 Q112 448 244 440 Q331 444 418 440 Q571 448 724 440 Q864 439 1004 440 Q1098 448 1192 440 Q1299 448 1405 440 Q1563 437 1721 440 Q1833 452 1945 440 Q2083 430 2221 440" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 474 Q107 473 235 474 Q367 478 499 474 Q627 474 755 474 Q910 465 1065 474 Q1189 461 1313 474 Q1456 481 1600 474 Q1689 481 1777 474 Q1868 488 1959 474 Q2055 485 2150 474" fill="none" stroke="#C07F4A" stroke-width="2" opacity="0.45"/><path d="M-20 520 Q83 513 187 520 Q314 513 441 520 Q554 510 668 520 Q821 516 973 520 Q1090 522 1207 520 Q1359 518 1511 520 Q1665 520 1818 520 Q1941 521 2063 520" fill="none" stroke="#C07F4A" stroke-width="2" opacity="0.45"/><path d="M-20 572 Q122 575 264 572 Q406 562 548 572 Q640 575 731 572 Q821 560 910 572 Q1045 573 1179 572 Q1298 580 1417 572 Q1567 560 1718 572 Q1813 559 1909 572 Q1996 571 2084 572" fill="none" stroke="#C07F4A" stroke-width="2" opacity="0.45"/><path d="M-20 612 Q133 611 286 612 Q415 612 544 612 Q665 618 786 612 Q902 613 1018 612 Q1137 625 1255 612 Q1391 623 1527 612 Q1682 605 1837 612 Q1962 625 2087 612" fill="none" stroke="#C07F4A" stroke-width="4" opacity="0.45"/><path d="M-20 644 Q70 643 159 644 Q245 637 331 644 Q417 649 503 644 Q645 655 788 644 Q881 650 973 644 Q1106 634 1239 644 Q1389 657 1540 644 Q1637 657 1735 644 Q1847 644 1959 644 Q2118 654 2277 644" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 695 Q140 693 299 695 Q413 691 526 695 Q614 692 701 695 Q808 694 915 695 Q1052 692 1188 695 Q1309 690 1431 695 Q1587 684 1744 695 Q1898 688 2051 695" fill="none" stroke="#C07F4A" stroke-width="2" opacity="0.45"/><path d="M-20 727 Q82 739 184 727 Q278 735 373 727 Q518 737 664 727 Q798 740 932 727 Q1044 728 1157 727 Q1278 727 1399 727 Q1505 721 1612 727 Q1755 718 1899 727 Q2051 721 2203 727" fill="none" stroke="#C07F4A" stroke-width="2" opacity="0.45"/><path d="M-20 778 Q124 766 268 778 Q417 766 565 778 Q714 777 863 778 Q970 780 1078 778 Q1232 772 1386 778 Q1476 779 1567 778 Q1666 767 1765 778 Q1858 766 1950 778 Q2047 773 2143 778" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 818 Q76 817 173 818 Q307 812 440 818 Q585 832 729 818 Q812 805 895 818 Q1015 832 1136 818 Q1257 811 1378 818 Q1494 823 1610 818 Q1742 823 1874 818 Q1997 829 2121 818" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 863 Q139 859 297 863 Q444 869 590 863 Q721 860 852 863 Q960 851 1068 863 Q1158 851 1248 863 Q1388 856 1527 863 Q1620 851 1713 863 Q1860 873 2008 863" fill="none" stroke="#C07F4A" stroke-width="3" opacity="0.45"/><path d="M-20 904 Q115 891 251 904 Q346 897 440 904 Q521 900 601 904 Q707 917 814 904 Q920 891 1025 904 Q1176 896 1327 904 Q1421 899 1516 904 Q1603 897 1689 904 Q1822 897 1954 904 Q2096 892 2238 904" fill="none" stroke="#C07F4A" stroke-width="2" opacity="0.45"/><path d="M-20 938 Q107 935 234 938 Q338 942 442 938 Q529 951 615 938 Q764 929 912 938 Q1063 946 1215 938 Q1342 946 1470 938 Q1608 938 1745 938 Q1848 942 1951 938 Q2043 947 2134 938" fill="none" stroke="#C07F4A" stroke-width="4" opacity="0.45"/><path d="M-20 990 Q125 980 270 990 Q392 990 514 990 Q661 998 807 990 Q953 992 1100 990 Q1251 995 1402 990 Q1538 982 1673 990 Q1756 979 1838 990 Q1947 979 2056 990" fill="none" stroke="#C07F4A" stroke-width="4" opacity="0.45"/><path d="M-20 1029 Q110 1032 240 1029 Q375 1029 509 1029 Q590 1037 670 1029 Q810 1029 950 1029 Q1072 1033 1195 1029 Q1281 1036 1366 1029 Q1466 1017 1566 1029 Q1667 1035 1769 1029 Q1865 1036 1961 1029" fill="none" stroke="#C07F4A" stroke-width="4" opacity="0.45"/><path d="M-20 1070 Q91 1069 201 1070 Q336 1077 471 1070 Q600 1074 729 1070 Q816 1060 902 1070 Q1002 1077 1102 1070 Q1207 1072 1311 1070 Q1392 1058 1473 1070 Q1575 1075 1676 1070 Q1811 1075 1947 1070 Q2050 1070 2153 1070" fill="none" stroke="#C07F4A" stroke-width="4" opacity="0.45"/><ellipse cx="1650" cy="210" rx="34" ry="12" fill="none" stroke="#B3733F" stroke-width="3" opacity="0.5"/><ellipse cx="260" cy="930" rx="28" ry="10" fill="none" stroke="#B3733F" stroke-width="3" opacity="0.5"/></svg>
+    <div id="z-mehl" class="z-place" style="left:300px; top:170px; width:260px; height:320px">
+      <div id="z-mehl-hand" class="z-handwrap"><svg class="z-hand" viewBox="0 0 160 760" style="transform: rotate(90deg)">
+      <rect x="38" y="150" width="84" height="640" rx="40" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+      <rect x="28" y="430" width="104" height="360" rx="30" fill="#F7C548" stroke="#3A2418" stroke-width="6"/>
+      <ellipse cx="80" cy="110" rx="62" ry="70" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+      <path d="M40 70 L40 40 M64 58 L64 22 M90 58 L90 24 M114 70 L114 44" stroke="#3A2418" stroke-width="6" stroke-linecap="round"/>
+    </svg></div>
+      <div id="z-mehl-art" class="z-item"><svg viewBox="0 0 260 320"><path d="M30 60 L230 60 L238 310 L22 310 Z" fill="#F3E6CF" stroke="#3A2418" stroke-width="6" stroke-linejoin="round"/>
+      <path d="M30 60 L50 14 L210 14 L230 60 Z" fill="#E6D3B0" stroke="#3A2418" stroke-width="6" stroke-linejoin="round"/>
+      <rect x="54" y="120" width="152" height="70" rx="8" fill="#FFFFFF" stroke="#3A2418" stroke-width="5"/>
+      <text x="130" y="170" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="44" fill="#3A2418">MEHL</text>
+      <path d="M130 290 L130 214 M130 234 Q112 226 108 210 Q126 214 130 234 Q134 214 152 210 Q148 226 130 234 M130 256 Q112 248 108 232 Q126 236 130 256 Q134 236 152 232 Q148 248 130 256" fill="#E3A653" stroke="#3A2418" stroke-width="4" stroke-linejoin="round"/></svg></div>
+    </div>
+    <div id="z-mehl-label" class="z-labelw" style="left:270px; top:486px"><div class="z-label" style="transform: rotate(-3deg)">200 g Mehl</div></div>
+    <div id="z-milch" class="z-place" style="left:1320px; top:230px; width:340px; height:180px">
+      <div id="z-milch-hand" class="z-handwrap"><svg class="z-hand" viewBox="0 0 160 760" style="transform: rotate(-90deg)">
+      <rect x="38" y="150" width="84" height="640" rx="40" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+      <rect x="28" y="430" width="104" height="360" rx="30" fill="#F7C548" stroke="#3A2418" stroke-width="6"/>
+      <ellipse cx="80" cy="110" rx="62" ry="70" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+      <path d="M40 70 L40 40 M64 58 L64 22 M90 58 L90 24 M114 70 L114 44" stroke="#3A2418" stroke-width="6" stroke-linecap="round"/>
+    </svg></div>
+      <div id="z-milch-art" class="z-item"><svg viewBox="0 0 340 180"><path d="M20 40 Q20 20 40 20 L220 20 Q240 20 250 50 L268 64 L300 64 L300 116 L268 116 L250 130 Q240 160 220 160 L40 160 Q20 160 20 140 Z" fill="#F7FBFF" stroke="#3A2418" stroke-width="6" stroke-linejoin="round"/>
+      <rect x="296" y="56" width="34" height="68" rx="8" fill="#4D7CC2" stroke="#3A2418" stroke-width="6"/>
+      <rect x="60" y="48" width="140" height="84" rx="10" fill="#4D7CC2" stroke="#3A2418" stroke-width="5"/>
+      <text x="130" y="104" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="36" fill="#FFFFFF">MILCH</text></svg></div>
+    </div>
+    <div id="z-milch-label" class="z-labelw" style="left:1310px; top:416px"><div class="z-label" style="transform: rotate(-3deg)">300 ml Milch</div></div>
+    <div id="z-eier" class="z-place" style="left:250px; top:705px; width:300px; height:170px">
+      <div id="z-eier-hand" class="z-handwrap"><svg class="z-hand" viewBox="0 0 160 760" style="transform: rotate(90deg)">
+      <rect x="38" y="150" width="84" height="640" rx="40" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+      <rect x="28" y="430" width="104" height="360" rx="30" fill="#F7C548" stroke="#3A2418" stroke-width="6"/>
+      <ellipse cx="80" cy="110" rx="62" ry="70" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+      <path d="M40 70 L40 40 M64 58 L64 22 M90 58 L90 24 M114 70 L114 44" stroke="#3A2418" stroke-width="6" stroke-linecap="round"/>
+    </svg></div>
+      <div id="z-eier-art" class="z-item"><svg viewBox="0 0 300 170"><ellipse cx="80" cy="90" rx="62" ry="74" transform="rotate(-18 80 90)" fill="#D9A066" stroke="#3A2418" stroke-width="6"/>
+      <ellipse cx="216" cy="86" rx="62" ry="74" transform="rotate(14 216 86)" fill="#E0AC74" stroke="#3A2418" stroke-width="6"/>
+      <ellipse cx="62" cy="62" rx="14" ry="20" fill="#F2CDA0"/><ellipse cx="200" cy="58" rx="14" ry="20" fill="#F5D6AE"/></svg></div>
+    </div>
+    <div id="z-eier-label" class="z-labelw" style="left:280px; top:896px"><div class="z-label" style="transform: rotate(-3deg)">2 Eier</div></div>
+    <div id="z-salz" class="z-place" style="left:1390px; top:730px; width:260px; height:140px">
+      <div id="z-salz-hand" class="z-handwrap"><svg class="z-hand" viewBox="0 0 160 760" style="transform: rotate(-90deg)">
+      <rect x="38" y="150" width="84" height="640" rx="40" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+      <rect x="28" y="430" width="104" height="360" rx="30" fill="#F7C548" stroke="#3A2418" stroke-width="6"/>
+      <ellipse cx="80" cy="110" rx="62" ry="70" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+      <path d="M40 70 L40 40 M64 58 L64 22 M90 58 L90 24 M114 70 L114 44" stroke="#3A2418" stroke-width="6" stroke-linecap="round"/>
+    </svg></div>
+      <div id="z-salz-art" class="z-item"><svg viewBox="0 0 260 140"><rect x="20" y="24" width="170" height="92" rx="20" fill="#FFFFFF" stroke="#3A2418" stroke-width="6"/>
+      <path d="M190 30 L232 38 Q244 70 232 102 L190 110 Z" fill="#B9C2CB" stroke="#3A2418" stroke-width="6" stroke-linejoin="round"/>
+      <circle cx="214" cy="56" r="4" fill="#3A2418"/><circle cx="220" cy="72" r="4" fill="#3A2418"/><circle cx="214" cy="88" r="4" fill="#3A2418"/>
+      <text x="104" y="84" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="34" fill="#3A2418">SALZ</text></svg></div>
+    </div>
+    <div id="z-salz-label" class="z-labelw" style="left:1340px; top:626px"><div class="z-label" style="transform: rotate(-3deg)">1 Prise Salz</div></div>
+    <div id="z-zucker" class="z-place" style="left:770px; top:90px; width:380px; height:120px">
+      <div id="z-zucker-hand" class="z-handwrap"><svg class="z-hand" viewBox="0 0 160 760" style="transform: rotate(180deg)">
+      <rect x="38" y="150" width="84" height="640" rx="40" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+      <rect x="28" y="430" width="104" height="360" rx="30" fill="#F7C548" stroke="#3A2418" stroke-width="6"/>
+      <ellipse cx="80" cy="110" rx="62" ry="70" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+      <path d="M40 70 L40 40 M64 58 L64 22 M90 58 L90 24 M114 70 L114 44" stroke="#3A2418" stroke-width="6" stroke-linecap="round"/>
+    </svg></div>
+      <div id="z-zucker-art" class="z-item"><svg viewBox="0 0 380 120"><rect x="16" y="50" width="220" height="24" rx="12" fill="#B9C2CB" stroke="#3A2418" stroke-width="6"/>
+      <ellipse cx="292" cy="62" rx="76" ry="50" fill="#B9C2CB" stroke="#3A2418" stroke-width="6"/>
+      <path d="M232 70 Q240 26 290 22 Q346 24 352 72 Q300 96 232 70 Z" fill="#FFFFFF" stroke="#3A2418" stroke-width="5" stroke-linejoin="round"/>
+      <g fill="#E9E4DA"><circle cx="270" cy="50" r="5"/><circle cx="300" cy="40" r="5"/><circle cx="322" cy="58" r="5"/><circle cx="288" cy="66" r="5"/></g></svg></div>
+    </div>
+    <div id="z-zucker-label" class="z-labelw" style="left:1090px; top:96px"><div class="z-label" style="transform: rotate(2deg)">1 EL Zucker</div></div>
+    <div id="z-butter" class="z-place" style="left:830px; top:880px; width:260px; height:140px">
+      <div id="z-butter-hand" class="z-handwrap"><svg class="z-hand" viewBox="0 0 160 760" style="transform: rotate(0deg)">
+      <rect x="38" y="150" width="84" height="640" rx="40" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+      <rect x="28" y="430" width="104" height="360" rx="30" fill="#F7C548" stroke="#3A2418" stroke-width="6"/>
+      <ellipse cx="80" cy="110" rx="62" ry="70" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+      <path d="M40 70 L40 40 M64 58 L64 22 M90 58 L90 24 M114 70 L114 44" stroke="#3A2418" stroke-width="6" stroke-linecap="round"/>
+    </svg></div>
+      <div id="z-butter-art" class="z-item"><svg viewBox="0 0 260 140"><path d="M10 30 L250 20 L250 120 L10 130 Z" fill="#F0E2C2" stroke="#3A2418" stroke-width="6" stroke-linejoin="round"/>
+      <rect x="40" y="34" width="160" height="80" rx="8" fill="#F8D66D" stroke="#3A2418" stroke-width="6"/>
+      <path d="M200 26 L250 20 L250 120 L200 126 Z" fill="#E3C98F" stroke="#3A2418" stroke-width="5" stroke-linejoin="round"/></svg></div>
+    </div>
+    <div id="z-butter-label" class="z-labelw" style="left:1100px; top:886px"><div class="z-label" style="transform: rotate(2deg)">Butter zum Braten</div></div>
+    <div id="z-bowlplace" class="z-place" style="left:680px; top:260px; width:560px; height:560px">
+      <div id="z-bowl-hand" class="z-handwrap"><svg class="z-hand" viewBox="0 0 160 760" style="transform: rotate(0deg)">
+      <rect x="38" y="150" width="84" height="640" rx="40" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+      <rect x="28" y="430" width="104" height="360" rx="30" fill="#F7C548" stroke="#3A2418" stroke-width="6"/>
+      <ellipse cx="80" cy="110" rx="62" ry="70" fill="#F2C29B" stroke="#3A2418" stroke-width="6"/>
+      <path d="M40 70 L40 40 M64 58 L64 22 M90 58 L90 24 M114 70 L114 44" stroke="#3A2418" stroke-width="6" stroke-linecap="round"/>
+    </svg></div>
+      <div id="z-bowl-art" class="z-item"><svg viewBox="0 0 560 560"><circle cx="280" cy="280" r="262" fill="#FAFAF7" stroke="#3A2418" stroke-width="6"/>
+  <circle cx="280" cy="280" r="246" fill="none" stroke="#4D7CC2" stroke-width="12"/>
+  <circle cx="280" cy="280" r="214" fill="#EFEDE6" stroke="#3A2418" stroke-width="4"/>
+  <path d="M120 170 Q170 100 260 86" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" opacity="0.9"/></svg></div>
+    </div>
+    <div id="z-cover"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    function rig(P) {
+      const q = (s) => "#" + P + "-" + s;
+      return {
+        blink(t) {
+          tl.to(q("eyes"), { scaleY: 0.1, svgOrigin: "200 176", duration: 0.06, ease: "power1.in" }, t);
+          tl.to(q("eyes"), { scaleY: 1, svgOrigin: "200 176", duration: 0.09, ease: "power1.out" }, t + 0.06);
+        },
+        mouth(t, name) {
+          ["smile", "open", "grin", "chew"].forEach((m) => tl.set(q("m-" + m), { opacity: m === name ? 1 : 0 }, t));
+        },
+        eyes(t, closed) {
+          tl.set(q("eyes"), { opacity: closed ? 0 : 1 }, t);
+          tl.set(q("eyesC"), { opacity: closed ? 1 : 0 }, t);
+        },
+        breathe(t0, t1) {
+          const n = Math.max(1, Math.floor((t1 - t0) / 0.9));
+          tl.fromTo(q("body"), { y: 0 }, { y: -4, duration: 0.9, ease: "sine.inOut", yoyo: true, repeat: n - 1 }, t0);
+        },
+        head(t, rot, d) {
+          tl.to(q("head"), { rotation: rot, svgOrigin: "200 265", duration: d || 0.3, ease: "back.out(1.6)" }, t);
+        },
+        arm(t, side, rot, d, ease) {
+          const o = side === "L" ? "128 305" : "272 305";
+          tl.to(q("arm" + side), { rotation: rot, svgOrigin: o, duration: d || 0.35, ease: ease || "back.out(1.4)" }, t);
+        },
+      };
+    }
+
+    // the blue cover lifts off like a page and reveals the counter
+    tl.fromTo("#z-cover", { y: 0, rotation: 0 }, { y: -1200, rotation: -4, duration: 0.55, ease: "power3.in" }, 0.05);
+    const items = [['mehl', -900, 0], ['milch', 900, 0], ['eier', -900, 0], ['salz', 900, 0], ['zucker', 0, -700], ['butter', 0, 700]];
+    items.forEach(([id, ex, ey], k) => {
+      const t = 0.9 + k * 1.8;
+      const hx = ex === 0 ? 0 : (ex < 0 ? -1 : 1), hy = ey === 0 ? 0 : (ey < 0 ? -1 : 1);
+      tl.fromTo("#z-" + id, { x: ex, y: ey }, { x: 0, y: 0, duration: 0.55, ease: "expo.out" }, t);
+      tl.fromTo("#z-" + id + "-art", { scale: 1 }, { scale: 1.05, duration: 0.08, yoyo: true, repeat: 1, ease: "power1.out" }, t + 0.5);
+      tl.fromTo("#z-" + id + "-hand", { x: 0, y: 0 }, { x: hx * 1100, y: hy * 800, duration: 0.45, ease: "power3.in" }, t + 0.7);
+      tl.fromTo("#z-" + id + "-label", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.7)" }, t + 0.55);
+    });
+    // the bowl comes in last, into the middle
+    tl.fromTo("#z-bowlplace", { y: 900 }, { y: 0, duration: 0.6, ease: "expo.out" }, 11.6);
+    tl.fromTo("#z-bowl-hand", { y: 0 }, { y: 900, duration: 0.45, ease: "power3.in" }, 12.4);
+
+    window.__timelines["zutaten"] = tl;
+  </script>
+</template>
